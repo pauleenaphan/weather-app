@@ -11,6 +11,11 @@ function loadPage(){
     locName.setAttribute('id', 'locName');
     locName.textContent = "location";
     page.append(locName);
+
+    const tempF = document.createElement("tempF");
+    tempF.setAttribute('id', 'tempF');
+    tempF.textContent = "tempF";
+    page.append(tempF);
 }
 
 
@@ -26,7 +31,13 @@ function getWeather(){
         return response.json();
     })
     .then(function(response){
-        console.log(response.location.name);
-        locName.textContent = (response.location.name);
+        console.log(response.current.temp_f);
+        // locName.textContent = (response.location.name);
+        changeValue(response);
     })
+}
+
+function changeValue(response){
+    locName.textContent = (response.location.name);
+    tempF.textContent = (response.current.temp_f);
 }
