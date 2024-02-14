@@ -2,7 +2,13 @@ const subbtn = document.getElementById("subbtn");
 const searchInput = document.getElementById("searchInput");
 
 loadPage();
-subbtn.addEventListener('click', getWeather);
+subbtn.addEventListener('click', ()=>{
+    if(searchInput.value == ""){
+        alert("Input is empty");
+        return;
+    }
+    getWeather();
+});
 
 function loadPage(){
     const page = document.getElementById("page")
@@ -16,11 +22,19 @@ function loadPage(){
     tempF.setAttribute('id', 'tempF');
     tempF.textContent = "tempF";
     page.append(tempF);
+
+    const conditions = document.createElement("conditions");
+    conditions.setAttribute('id', 'conditions');
+    conditions.textContent = "Weather Conditions";
+    page.append(conditions)
+
+    const changeScale = document.createElement('button');
+    changeScale.setAttribute('id', 'changeScale')
+    changeScale.textContent = "Switch to C";
+    page.append(changeScale);
 }
 
-
-
-
+//Gets data from the weather api
 function getWeather(){
     // console.log(searchInput.value);
     var key = "f43a52fb673f4315a9d41653241202";
@@ -37,7 +51,32 @@ function getWeather(){
     })
 }
 
+//Assigns the data from weather api to each of our variables
 function changeValue(response){
     locName.textContent = (response.location.name);
-    tempF.textContent = (response.current.temp_f);
+    if(changeScale.textContent == "Switch to C"){
+        tempF.textContent = (response.current.temp_c);
+    }else{
+        tempF.textContent = (response.current.temp_f);
+    }
+    conditions.textContent = (response.current.condition.text);
+
+    if(response.current.is_day == 1){
+        console.log("daytime" + response.current.is_day);
+        document.body.style.background = "lightblue";
+    }else{
+        console.log("nighttime" + response.current.is_day);
+        document.body.style.background = "darkblue";
+    }
 }
+
+//switches the button text and calls getWeather to change the value
+changeScale.addEventListener('click', ()=>{
+    if(changeScale.textContent == "Switch to C"){
+        changeScale.textContent = "Switch to F";
+    }else{
+        changeScale.textContent = "Switch to C";
+    }
+    //need to call getWeather in order to change the value of conditions 
+    getWeather();
+})
