@@ -11,27 +11,29 @@ subbtn.addEventListener('click', ()=>{
 });
 
 function loadPage(){
-    const page = document.getElementById("page")
+    document.body.style.backgroundColor = "black";
+    const lArea = document.getElementById("leftArea");
+    const rArea = document.getElementById("rightArea");
 
     const locName = document.createElement("locName");
     locName.setAttribute('id', 'locName');
     locName.textContent = "location";
-    page.append(locName);
-
-    const tempF = document.createElement("tempF");
-    tempF.setAttribute('id', 'tempF');
-    tempF.textContent = "tempF";
-    page.append(tempF);
+    lArea.append(locName);
 
     const conditions = document.createElement("conditions");
     conditions.setAttribute('id', 'conditions');
     conditions.textContent = "Weather Conditions";
-    page.append(conditions)
+    lArea.append(conditions);
+
+    const temp = document.createElement("temp");
+    temp.setAttribute('id', 'temp');
+    temp.textContent = "temp";
+    rArea.append(temp);
 
     const changeScale = document.createElement('button');
     changeScale.setAttribute('id', 'changeScale')
     changeScale.textContent = "Switch to C";
-    page.append(changeScale);
+    rArea.append(changeScale);
 }
 
 //Gets data from the weather api
@@ -48,16 +50,19 @@ function getWeather(){
         console.log(response.current.temp_f);
         // locName.textContent = (response.location.name);
         changeValue(response);
+    }).catch(error =>{ //catches invalid input or any other errors
+        alert("not valid input");
+        console.log(error);
     })
 }
 
 //Assigns the data from weather api to each of our variables
 function changeValue(response){
     locName.textContent = (response.location.name);
-    if(changeScale.textContent == "Switch to C"){
-        tempF.textContent = (response.current.temp_c);
+    if(changeScale.textContent == "Switch to F"){
+        temp.textContent = (response.current.temp_c);
     }else{
-        tempF.textContent = (response.current.temp_f);
+        temp.textContent = (response.current.temp_f);
     }
     conditions.textContent = (response.current.condition.text);
 
@@ -66,7 +71,8 @@ function changeValue(response){
         document.body.style.background = "lightblue";
     }else{
         console.log("nighttime" + response.current.is_day);
-        document.body.style.background = "darkblue";
+        document.body.style.opacity = "";
+        document.body.style.backgroundImage = "url(https://media.giphy.com/media/3ohhwNqFMnb7wZgNnq/giphy.gif?cid=ecf05e47gddr15v4wjajgcnkc5ivptbg0v68xvvng39np4jp&ep=v1_gifs_search&rid=giphy.gif&ct=g)";
     }
 }
 
