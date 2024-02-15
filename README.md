@@ -7,3 +7,4 @@
 
 - [Live Page](https://pauleenaphan.github.io/weather-app/)
 ![image](https://github.com/pauleenaphan/weather-app/assets/77126730/bb7715a1-1b81-4aa3-8333-908619d1d2ae)
+![image](https://github.com/pauleenaphan/weather-app/assets/77126730/8e490e4d-c3be-4b75-ac38-67a07b5f4643)
