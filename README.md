@@ -1,6 +1,4 @@
 # Weather Page
-
-# About This Project
 Project allows users to enter their city and find out the weather in the area. They can also find out the weather conditions, wind speed, UV index, and cloud coverage. 
 
 # Demo
