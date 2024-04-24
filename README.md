@@ -1,10 +1,9 @@
 # Weather Page
 
-# Demo
-
-
 # About This Project
 Project allows users to enter their city and find out the weather in the area. They can also find out the weather conditions, wind speed, UV index, and cloud coverage. 
+
+# Demo
 
 # Preview
 ![image](https://github.com/pauleenaphan/weather-app/assets/77126730/d584b05b-eddd-422b-94c3-303022aea302)
