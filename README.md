@@ -1,12 +1,21 @@
 # Weather Page
 
-- Users can search for the weather by inputting their city 
-- Users can see the temperature and weather conditons (sunny, cloudy, rainy, etc)
-- Users are able to change the temperature from celsius to fahrenheit
+# Demo
 
- [API: weatherapi](https://www.weatherapi.com/docs)
- 
- [Live Page](https://pauleenaphan.github.io/weather-app/)
 
-![image](https://github.com/pauleenaphan/weather-app/assets/77126730/bb7715a1-1b81-4aa3-8333-908619d1d2ae)
-![image](https://github.com/pauleenaphan/weather-app/assets/77126730/8e490e4d-c3be-4b75-ac38-67a07b5f4643)
+# About This Project
+Project allows users to enter their city and find out the weather in the area. They can also find out the weather conditions, wind speed, UV index, and cloud coverage. 
+
+# Preview
+![image](https://github.com/pauleenaphan/weather-app/assets/77126730/d584b05b-eddd-422b-94c3-303022aea302)
+
+# Features
+- Uses Weather API to get information to display
+- Depending on night or day, the background will change
+- Able to switch from fahrenheit to celsius 
+
+Technologies
+- [Tailwind CSS](https://tailwindcss.com)
+- [Weather API](https://www.weatherapi.com)
+- HTML
+- Javascript 
