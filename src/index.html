@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script src = "script.js" defer></script>
+  <link href="./output.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" rel="stylesheet">
+  <title>Weather App</title>
+</head>
+<body class="font-sans">
+  <section class="header flex justify-center p-10 items-center">
+    <form onsubmit="getWeather(event)" class="flex gap-3">
+      <input type="text" id="userInput" placeholder="Enter your location" class="p-2 rounded-xl focus:outline-none bg-gray-200 bg-opacity-80"/>
+      <input type="submit"  value="Search" class="submitBtn pl-6 pr-6 hover:cursor-pointer rounded-xl bg-pink-300 hover:bg-pink-400 hover:text-white font-bold"/>
+    </form>
+    <button id="changeScale" class="bg-purple-300 pl-4 pr-4 pt-2 pb-2 right-32 rounded-xl absolute font-bold hover:bg-purple-400 hover:text-white"> Switch to C </button>
+  </section>
+  <section class="bg-gray-200 bg-opacity-90 flex flex-col p-8 text-center gap-4 mt-16 w-1/4 justify-center content-center mx-auto border-8 rounded-xl">
+    <h1 id="location" class="font-bold text-5xl"> Candy Land </h1>
+    <p id="date" class="text-2xl"> July 23, 2002 </p>
+    <h2 id="currTemp" class="text-7xl"> 69 </h2>
+    <p id="conditions" class="text-2xl"> Cloudy </p>
+    <p id="windSpeed" class="text-2xl"> Wind Speed: 20 </p>
+    <p id="uvIndex" class="text-2xl"> UV: 10 </p>
+    <p id="cloudCoverage" class="text-2xl"> Cloud Coverage: 80%</p>
+  </section>
+</body>
+</html>
